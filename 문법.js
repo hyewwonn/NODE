@@ -21,8 +21,7 @@ plus = add;           //plus도 add()의 역할을 할 수 있음
 result = plus(3,4);
 console.log(result);  //7
 
-sub = function(n1, n2){
-  return n1-n2;
-}
+sub = (n1,n2) => n1-n2;   //함수 body가 return 하나일 때
+
 result = sub(3,2);
 console.log(result);  //1
