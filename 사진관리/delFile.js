@@ -10,8 +10,9 @@ function deleteFilesWithSensitiveNames(dirPath) {
     const filePath = path.join(dirPath, file);
     const isDirectory = fs.statSync(filePath).isDirectory();
     if (!isDirectory && file.includes('[기밀]')) {
-      fs.unlinkSync(filePath);
-      console.log(`Deleted file: ${filePath}`);
+      const newFilePath = filePath.replace('[기밀]', '');
+      fs.renameSync(filePath, newFilePath);
+      console.log(`Renamed file: ${filePath} -> ${newFilePath}`);
     } else if (isDirectory) {
       // 하위 폴더가 있을 경우 해당 폴더에 대해 재귀적으로 함수를 호출합니다.
       deleteFilesWithSensitiveNames(filePath);
