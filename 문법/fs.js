@@ -6,6 +6,7 @@ console.log(__dirname);
 
 // 해당 경로에 있는 파일 목록의 배열을 반환
 const files = fs.readdirSync(__dirname);
+console.log(files)
 
 // 특정파일의 전체(절대)경로
 // result = __dirname + '\\' +  files[1]
@@ -14,7 +15,6 @@ result = path.join(__dirname, files[1]);
 console.log(result);
 
 console.log(path.basename(result));   // path.basename()파일명만 추출
-
 
 const copiedFile = path.join(__dirname, '복사한파일.js');
 fs.copyFileSync(result, copiedFile);  // 파일 복사
