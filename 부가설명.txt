@@ -20,3 +20,8 @@
     "ejs": "^3.1.9"
   }
 }
+
+
+package.json에서
+"dependencies" 속성과 devDependencies는 npm i(install)을 하면 패키지가 설치된다
+devDependencies의 경우, 
